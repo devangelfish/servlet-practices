@@ -1,0 +1,22 @@
+helloweb
+  |----[/src]
+  |      |----[/main]
+  |      |      |----[/java]
+  |      |      |      |----- /helloweb
+  |      |      |              |----- HelloServlet.java
+  |      |      |  
+  |      |      |----[/resources]
+  |      |      |      |----- /helloweb
+  |      |      |               |----- jdbc.properties
+  |      |      |          
+  |      |      |----[/webapp]
+  |      |      |       |---- /WEB-INF
+  |      |      |       		|---- /classes
+  |      |      |       		|---- /lib
+  |      |      |       		|---- web.xml
+  |      |      |
+  |      |----[/test]
+  |      |      |----[/java]
+  |      |      |      |----- /helloweb
+  |      |      |               |----- TestHelloServlet.java
+  |      |      |             
