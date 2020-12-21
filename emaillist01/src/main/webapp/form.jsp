@@ -12,17 +12,17 @@
 		메일 리스트에 가입하려면,<br/>
 		아래 항목을 기입하고 submit 버튼을 클릭하세요.
 	</p>
-	<form action="" method="">
-	    First name: <input type="text" name="fn" value="" >
+	<form action="add.jsp" method="post">
+	    First name: <input type="text" name="firstName">
 	    <br/><br/>
 	    
-	    Last name: <input type="text" name="ln" value="">
+	    Last name: <input type="text" name="lastName">
 	    <br/><br/>
 	    
-	    Email address: <input type="text" name="email" value="">
+	    Email address: <input type="text" name="email">
 	    <br/><br/>
 	    
-	    <input type="submit" value="submit">
+	    <input type="submit" name='등록' value="submit">
 	</form>
 	<br>
 	<p>

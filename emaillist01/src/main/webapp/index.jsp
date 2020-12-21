@@ -1,5 +1,12 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
+<%@ page import="com.bitacademy.emaillist.dao.EmaillistDao" %>
+<%@ page import="com.bitacademy.emaillist.vo.EmaillistVo" %>
+
+<%
+	List<EmaillistVo> list = new EmaillistDao().findAll();
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,21 +17,23 @@
 	<h1>메일 리스트에 가입되었습니다.</h1>
 	<p>입력한 정보 내역입니다.</p>
 	<!-- 메일정보 리스트 -->
-	<table border="1" cellpadding="5" cellspacing="2">
+	<% for(EmaillistVo vo : list) { %>
+	<table border="1">
 		<tr>
 			<td align=right>First name: </td>
-			<td>안</td>
+			<td><%=vo.getFirstName() %></td>
 		</tr>
 		<tr>
 			<td align=right width="110">Last name: </td>
-			<td width="110">대혁</td>
+			<td width="110"><%=vo.getLastName() %></td>
 		</tr>
 		<tr>
 			<td align=right>Email address: </td>
-			<td>kickscar@gmail.com</td>
-		</tr>
+			<td><%=vo.getEmail() %></td>
+		</tr>	
 	</table>
-	<br>
+	<br>	
+	<% } %>
 	<p>
 		<a href='form.jsp'>추가 이메일 등록</a>
 	</p>
