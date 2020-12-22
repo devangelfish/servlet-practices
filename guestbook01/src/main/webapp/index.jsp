@@ -5,7 +5,8 @@
 <%@ page import="com.bitacademy.guestbook.vo.GuestbookVo" %>
 <%
 	List<GuestbookVo> list = new GuestbookDao().findAll();
-	int count = 1;
+	int count = list.size();
+	int index = 0;
 %>
 <html>
 <head>
@@ -33,7 +34,7 @@
 	<% for(GuestbookVo vo : list) { %>
 	<table width=510 border=1>
 		<tr>
-			<td><%= count++ %></td>
+			<td>[<%= count - index++ %>]</td>
 			<td><%= vo.getName() %></td>
 			<td><%= vo.getReg_date() %></td>
 			<td><a href="/guestbook01/deleteform.jsp?no=<%= vo.getNo() %>">삭제</a></td>
