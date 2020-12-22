@@ -35,7 +35,7 @@
 	<br>	
 	<% } %>
 	<p>
-		<a href='form.jsp'>추가 이메일 등록</a>
+		<a href='<%=request.getContextPath() %>/el?a=list'>추가 이메일 등록</a>
 	</p>
 	<br>
 </body>

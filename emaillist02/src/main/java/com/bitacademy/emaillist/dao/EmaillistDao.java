@@ -23,8 +23,8 @@ public class EmaillistDao {
 			
 			// 3. SQL 준비
 			String sql =
-				"   select no, first_name, last_name, email" +
-				"     from emaillist" +
+				"select no, first_name, last_name, email" +
+				" from emaillist" +
 				" order by no desc";
 			pstmt = conn.prepareStatement(sql);
 			
@@ -122,12 +122,11 @@ public class EmaillistDao {
 			Class.forName("org.mariadb.jdbc.Driver");
 			
 			// 2. 연결하기
-			String url = "jdbc:mysql://192.168.0.20:3307/webdb?characterEncoding=utf8";
+			String url = "jdbc:mysql://192.168.1.41:3307/webdb?characterEncoding=utf8";
 			conn = DriverManager.getConnection(url, "webdb", "webdb");
 		} catch (ClassNotFoundException e) {
 			System.out.println("드라이버 로딩 실패:" + e);
 		}
-		
 		return conn;
 	}
 }

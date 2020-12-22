@@ -23,14 +23,27 @@ public class EmaillistController extends HttpServlet {
 		String actionName = request.getParameter("a"); // URL 매핑을 하는 방법도 있음, web.xml에 추가해서. /뒤에 parsing
 		
 		if("list".equals(actionName)) {
-			
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/form.jsp");
+			rd.forward(request, response);
 		} else if("add".equals(actionName)) {
+			request.setCharacterEncoding("utf-8");
+
+			String firstName = request.getParameter("firstName");
+			String lastName = request.getParameter("lastName");
+			String email = request.getParameter("email");
 			
+			EmaillistVo vo = new EmaillistVo();
+			vo.setFirstName(firstName);
+			vo.setLastName(lastName);
+			vo.setEmail(email);
+			new EmaillistDao().insert(vo);
+
+			response.sendRedirect(request.getContextPath() + "/el");
 		} else {
 			List<EmaillistVo> list = new EmaillistDao().findAll();
 			
 			request.setAttribute("list", list);
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/veiws/index.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/index.jsp");
 			rd.forward(request, response);
 		}
 		

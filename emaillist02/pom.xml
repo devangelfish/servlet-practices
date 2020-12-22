@@ -6,6 +6,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>emaillist02</artifactId>
+  <packaging>war</packaging>
   
   	<dependencies>
 	<!-- https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client -->
